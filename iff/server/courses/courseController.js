@@ -1,5 +1,6 @@
+require("dotenv").config();
 const MongoClient = require('mongodb').MongoClient;
-const mongodb_url = process.env.MONGODB_URI;
+const mongodb_url = process.env.MONGO_DB_URI;
 const generateId = (option) => {
     try {
       const currentDate = moment().format('YYMMDDHHmmss');
@@ -47,6 +48,7 @@ const getCourses = async (req,res) => {
             "level":{
                 "$lte":level
             },
+            
         })
         
          return res.status(200).json({

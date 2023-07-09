@@ -13,7 +13,7 @@ module.exports = () => {
         .post(controller.addModule)
     
     router.route(`${baseRoute}/getCourses`)
-        .post(controller.getCourses)
+        .get(controller.getCourses)
 
     return router
 }

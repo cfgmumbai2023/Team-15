@@ -1,11 +1,13 @@
+require("dotenv").config();
 const MongoClient = require('mongodb').MongoClient;
-const mongodb_url = process.env.MONGODB_URI;
+const mongodb_url = process.env.MONGO_DB_URI;
 
 const logInUser = async (req,res) => {   
     try {
         const  nativeClient = await MongoClient.connect(mongodb_url, { useNewUrlParser: true });
         const users = nativeClient.db('team15').collection('users');
         const { email,password} = req.body || {};
+        console.log(req.body);
         if (!users.find({email})){
             return res.status(403).json({
                 status: false,

@@ -6,7 +6,7 @@ import 'video.js/dist/video-js.css';
 import videojs from 'video.js';
 // import VideoPlayer from "./VideoJS";
 import Upload from "./Upload";
-import Pdfviewer from "./Pdfviewer";
+// import Pdfviewer from "./Pdfviewer";
 
 
 const Home = () => {
@@ -44,7 +44,7 @@ const Home = () => {
             <div>Rest of app here</div>
       <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
       <div>Rest of app here</div>
-      <Pdfviewer document={'http://localhost:8080/kipyekcq8thwjzgwtam5.pdf'} />
+      {/* <Pdfviewer document={'http://localhost:8080/kipyekcq8thwjzgwtam5.pdf'} /> */}
         </>
     )
 }
