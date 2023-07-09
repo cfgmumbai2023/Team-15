@@ -4,7 +4,7 @@ const mongodb_url = process.env.MONGODB_URI;
 const createInstructor = async (req,res) => {   
     try {
         const  nativeClient = await MongoClient.connect(mongodb_url, { useNewUrlParser: true });
-        const users = nativeClient.db('db').collection('users');
+        const uasers = nativeClient.db('team15').collection('users');
         const { email,topic} = req.body || {};
         if (!users.find({email})){
             return res.status(403).json({
@@ -32,7 +32,7 @@ const createInstructor = async (req,res) => {
 const deleteInstructor = async (req,res) => {   
     try {
         const  nativeClient = await MongoClient.connect(mongodb_url, { useNewUrlParser: true });
-        const users = nativeClient.db('db').collection('users');
+        const users = nativeClient.db('team15').collection('users');
         const { email} = req.body || {};
         if (!users.find({email})){
             return res.status(403).json({

@@ -4,7 +4,7 @@ const mongodb_url = process.env.MONGODB_URI;
 const logInUser = async (req,res) => {   
     try {
         const  nativeClient = await MongoClient.connect(mongodb_url, { useNewUrlParser: true });
-        const users = nativeClient.db('db').collection('users');
+        const users = nativeClient.db('team15').collection('users');
         const { email,password} = req.body || {};
         if (!users.find({email})){
             return res.status(403).json({
