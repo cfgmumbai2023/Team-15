@@ -13,10 +13,12 @@ const generateId = (option) => {
       throw new Error(`Error while fetching Id | ${error}`);
     }
   }
+
+
 const signUpCoach = async (req,res) => {   
     try {
         const  nativeClient = await MongoClient.connect(mongodb_url, { useNewUrlParser: true });
-        const users = nativeClient.db('db').collection('users');
+        const users = nativeClient.db('team15').collection('users');
         const { name, dob,email,sport,coach_exp,level,lic_no,play_exp,password} = req.body || {};
         if (users.find(email)){
             return res.status(403).json({
@@ -56,6 +58,12 @@ const signUpCoach = async (req,res) => {
         });
     }
 }
+
+
+// app.get('/signUp', async (req, res) => {
+//     res.send(await signUpCoach());
+//   });
+
 
 module.exports = {
     signUpCoach
