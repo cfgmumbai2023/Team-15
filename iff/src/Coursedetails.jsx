@@ -1,14 +1,25 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const Coursedetails = () => {
+  let navigate = useNavigate(); 
+const videoPlay = ()=>{
+  let path = `videocomponent`;
+  
+
+navigate(path);
+}
+
   return (
     <>
       <Navbar />
       <div className="row">
-        <div className="col-6">
+        <div className="col-6 container coursedetails-container">
           <button className="coursedetails-ch">
-            <select>
+            <select onChange={videoPlay}>
               <option value="module1">Module 1</option>
               <option value="module1a">Module 1A</option>
               <option value="module1b">Module 1B</option>
@@ -16,7 +27,7 @@ const Coursedetails = () => {
           </button>
           <br />
           <button className="coursedetails-ch">
-            <select>
+            <select onChange={videoPlay}>
               <option value="module2">Module 2</option>
               <option value="module2a">Module 2A</option>
               <option value="module2b">Module 2B</option>
@@ -24,7 +35,7 @@ const Coursedetails = () => {
           </button>
           <br />
           <button className="coursedetails-ch">
-            <select>
+            <select onChange={videoPlay}>
               <option value="module3">Module 3</option>
               <option value="module3a">Module 3A</option>
               <option value="module3b">Module 3B</option>
@@ -32,7 +43,7 @@ const Coursedetails = () => {
           </button>
           <br />
           <button className="coursedetails-ch">
-            <select>
+            <select onChange={videoPlay}>
               <option value="module4">Module 4</option>
               <option value="module4a">Module 4A</option>
               <option value="module4b">Module 4B</option>
@@ -40,7 +51,7 @@ const Coursedetails = () => {
           </button>
           <br />
           <button className="coursedetails-ch">
-            <select>
+            <select onChange={videoPlay}>
               <option value="module5">Module 5</option>
               <option value="module5a">Module 5A</option>
               <option value="module5b">Module 5B</option>

@@ -7,6 +7,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css';
 import Coursedetails from './Coursedetails';
+import Videocomponent from './Videocomponent';
 
 const App=()=>{
   return(
@@ -16,6 +17,7 @@ const App=()=>{
     <Route exact path='/' Component={Home} />
     <Route exact path='/navbar' Component={Navbar} />
     <Route exact path='/coursedetails' Component={Coursedetails} />
+    <Route exact path='/coursedetails/videocomponent' Component={Videocomponent}/>
   </Routes>
 </Router>
     </>
