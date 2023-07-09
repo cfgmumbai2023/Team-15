@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
+import Home from './Home';
+import Navbar from './Navbar';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css';
+import Coursedetails from './Coursedetails';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App=()=>{
+  return(
+    <>
+<Router>
+  <Routes>
+    <Route exact path='/' Component={Home} />
+    <Route exact path='/navbar' Component={Navbar} />
+    <Route exact path='/coursedetails' Component={Coursedetails} />
+  </Routes>
+</Router>
+    </>
   );
 }
 
